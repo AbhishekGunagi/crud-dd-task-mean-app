@@ -1,30 +1,179 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js).
-The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database.
-The frontend will be an Angular application utilizing HTTPClient for communication.  
+# Discover Dollar – Full Stack CRUD Application (MEAN Stack)
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status.
-Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+## 📌 Project Overview
 
-## Project setup
+This project is a full-stack CRUD application built using the MEAN stack (MongoDB, Express.js, Angular, Node.js). It allows users to create, read, update, and delete tutorials.
 
-### Node.js Server
+The application is fully containerized using Docker and orchestrated with Docker Compose to ensure consistent deployment and environment configuration.
 
-cd backend
+---
+
+## 🏗 Architecture
+
+Frontend (Angular)  
+→ communicates with → Backend (Node.js + Express)  
+→ connects to → MongoDB  
+
+All services run as isolated containers inside a Docker network.
+
+---
+
+## 🛠 Tech Stack
+
+- Frontend: Angular 15
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- ORM: Mongoose
+- Containerization: Docker
+- Orchestration: Docker Compose
+- Web Server: Nginx
+
+---
+
+## 📁 Project Structure
+# Discover Dollar – Full Stack CRUD Application (MEAN Stack)
+
+## 📌 Project Overview
+
+This project is a full-stack CRUD application built using the MEAN stack (MongoDB, Express.js, Angular, Node.js). It allows users to create, read, update, and delete tutorials.
+
+The application is fully containerized using Docker and orchestrated with Docker Compose to ensure consistent deployment and environment configuration.
+
+---
+
+## 🏗 Architecture
+
+Frontend (Angular)  
+→ communicates with → Backend (Node.js + Express)  
+→ connects to → MongoDB  
+
+All services run as isolated containers inside a Docker network.
+
+---
+
+## 🛠 Tech Stack
+
+- Frontend: Angular 15
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- ORM: Mongoose
+- Containerization: Docker
+- Orchestration: Docker Compose
+- Web Server: Nginx
+
+---
+
+## 📁 Project Structure
+
+crud-dd-task-mean-app/
+│
+├── backend/
+│ ├── app/
+│ ├── Dockerfile
+│ └── server.js
+│
+├── frontend/
+│ ├── src/
+│ ├── Dockerfile
+│ └── nginx.conf
+│
+├── docker-compose.yml
+└── README.md
+
+---
+
+## ⚙️ Environment Configuration
+
+The backend uses environment variables for database configuration:
+
+MONGO_URL=mongodb://mongodb:27017/dd_db
+
+This makes the application flexible for:
+
+- Local development  
+- Docker environments  
+- Cloud deployments  
+
+---
+
+## 🚀 How to Run the Project
+
+### Option 1: Run Using Docker (Recommended)
+
+From the project root directory:
+
+docker compose up --build
+
+Access the application:
+
+Frontend:  
+http://localhost:8081  
+
+Backend API:  
+http://localhost:8080/api/tutorials  
+
+To stop:
+docker compose down
+
+---
+
+### Option 2: Run Without Docker
+
+1. Start MongoDB locally  
+
+2. Navigate to backend folder:
 
 npm install
+node server.js
 
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
-
-Run `node server.js`
-
-### Angular Client
-
-cd frontend
+3. Navigate to frontend folder:
 
 npm install
+ng serve
 
-Run `ng serve --port 8081`
 
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
+---
 
-Navigate to `http://localhost:8081/`
+## ✅ Features
+
+- Add tutorial  
+- View tutorials  
+- Update tutorial  
+- Delete tutorial  
+- Persistent MongoDB storage using Docker volumes  
+- Health checks for backend container  
+- Clean project structure  
+- Environment-based configuration  
+
+---
+
+## 🐳 Docker Setup
+
+Services defined in docker-compose:
+
+- mongodb  
+- backend  
+- frontend  
+
+MongoDB data is persisted using a named Docker volume:
+
+mongo-data
+
+---
+
+## 📦 Improvements Applied
+
+- Removed hardcoded database URL  
+- Added environment variable support  
+- Added Docker healthcheck  
+- Cleaned `.gitignore`  
+- Removed obsolete compose version field  
+- Production build for Angular frontend  
+
+---
+
+## 📬 Author
+
+Abhishek Gunagi  
+GitHub: https://github.com/AbhishekGunagi
+LinkedIn: https://www.linkedin.com/in/abhishek-gunagi-395741249/
