@@ -31,39 +31,6 @@ All services run as isolated containers inside a Docker network.
 ---
 
 ## 📁 Project Structure
-# Discover Dollar – Full Stack CRUD Application (MEAN Stack)
-
-## 📌 Project Overview
-
-This project is a full-stack CRUD application built using the MEAN stack (MongoDB, Express.js, Angular, Node.js). It allows users to create, read, update, and delete tutorials.
-
-The application is fully containerized using Docker and orchestrated with Docker Compose to ensure consistent deployment and environment configuration.
-
----
-
-## 🏗 Architecture
-
-Frontend (Angular)  
-→ communicates with → Backend (Node.js + Express)  
-→ connects to → MongoDB  
-
-All services run as isolated containers inside a Docker network.
-
----
-
-## 🛠 Tech Stack
-
-- Frontend: Angular 15
-- Backend: Node.js, Express.js
-- Database: MongoDB
-- ORM: Mongoose
-- Containerization: Docker
-- Orchestration: Docker Compose
-- Web Server: Nginx
-
----
-
-## 📁 Project Structure
 
 crud-dd-task-mean-app/
 │
